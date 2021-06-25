@@ -12,3 +12,15 @@ body {
 body, input, button, textarea {
     font: 400 16px 'Roboto', sans-serif;
 }
+
+.loading {
+    text-align: center;
+    justify-content:center;
+    margin-top: 10%;
+    h3 {
+        margin-top: 2vh;
+    }
+    span {
+        color: darkgrey;
+    }
+}
