@@ -109,7 +109,3 @@ export function Room() {
         </div>
     )
 }
-
-function signInWithGoogle() {
-    throw new Error('Function not implemented.');
-}
