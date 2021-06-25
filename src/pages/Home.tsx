@@ -4,6 +4,7 @@ import { FormEvent } from "react";
 import illustrationImg from "../assets/images/illustration.svg";
 import logoImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
+import githubIconImg from '../assets/images/github.svg';
 import { Button } from '../components/Button';
 import '../styles/auth.scss';
 import { useAuth } from "../hooks/useAuth";
@@ -14,11 +15,16 @@ export function Home(){
     const { user, signInWithGoogle } = useAuth();
     const [roomCode, setRoomCode] = useState('');
 
-    async function handleCreateRoom() {
+    async function handleCreateRoomWithGoogle() {
         if(!user){
             await signInWithGoogle();
         }
         history.push('/rooms/new');
+    }
+
+    async function handleCreateRoomWithGithub() {
+        alert('Por enquanto o login via github se encontra desativado!');
+        return;
     }
 
     async function handleJoinRoom(event: FormEvent) {
@@ -50,9 +56,13 @@ export function Home(){
             <main>
                 <div className="main-content">
                     <img src={logoImg} alt="Letmeask"/>
-                    <button onClick={handleCreateRoom} className="create-room">
+                    <button onClick={handleCreateRoomWithGoogle} className="create-room-google">
                         <img src={googleIconImg} alt="Logo do google"/>
                         Crie sua sala com o Google
+                    </button>
+                    <button onClick={handleCreateRoomWithGithub} className="create-room-github">
+                        <img src={githubIconImg} alt="Logo do github"/>
+                        Crie sua sala com o Github
                     </button>
                     <div className="separator">ou entre em uma sala</div>
                     <form onSubmit={handleJoinRoom}>
