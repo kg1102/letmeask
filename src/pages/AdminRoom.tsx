@@ -49,7 +49,10 @@ export function AdminRoom() {
                 </div>
                 <div className="question-list">
                     {questions.length === 0 && (
-                        <h1>msg</h1>
+                        <div>
+                            <h1>Nenhuma pergunta por aqui...</h1>
+                            <span>Envie o código desta sala para seus amigos e comece a responder perguntas!</span>
+                        </div>
                     )}
                     {questions.map(question => {
                         return (
