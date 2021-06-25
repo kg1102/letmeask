@@ -51,6 +51,10 @@ export function Room() {
         }
     }
 
+    async function loginGoogle(){
+        await signInWithGoogle();
+    }
+
     return (
         <div id="page-room">
             <header>
@@ -77,7 +81,7 @@ export function Room() {
                                 <span>{user.name}</span>
                             </div>
                         ) : (
-                            <span>Para enviar uma pergunta, <button>faça seu login</button>.</span>
+                            <span>Para enviar uma pergunta, <button onClick={loginGoogle}>faça seu login</button>.</span>
                         )}
                         <Button type="submit" disabled={!user}>Enviar pergunta</Button>
                     </div>
@@ -108,4 +112,8 @@ export function Room() {
             </main>
         </div>
     )
+}
+
+function signInWithGoogle() {
+    throw new Error('Function not implemented.');
 }
