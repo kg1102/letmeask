@@ -52,7 +52,9 @@ export function Room() {
     }
 
     async function loginGoogle(){
-        await signInWithGoogle();
+        if(!user){
+            await signInWithGoogle();
+        }
     }
 
     return (
