@@ -10,6 +10,7 @@
             align-items: center;
             > img {
                 max-height: 45px;
+                cursor: pointer;
             }
             > div {
                 display: flex;
@@ -20,6 +21,7 @@
             }
         }
     }
+
     main {
         max-width: 800px;
         margin: 0 auto;
@@ -31,6 +33,10 @@
                 font-family: 'Poppins', sans-serif; // Se não existir a fonte Poppins usar a padrão.
                 font-size: 24px;
                 color: #29292e;
+            }
+            .blurry-text {
+                text-shadow: 0 0 5px black;
+                color: transparent;
             }
             span {
                 margin-left: 16px;
@@ -94,6 +100,27 @@
         }
         .question-list {
             margin-top: 32px;
+            .empty-questions {
+                img {
+                    margin-top: 10rem;
+                    width: 12rem;
+                    height: 12rem;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                h1{
+                    text-align: center;
+                }
+                span{
+                    display: block;
+                    text-align: center;
+                    width: 21em;
+                    margin-left: auto;
+                    margin-right: auto;
+                    color: #737380;
+                }
+            }
         }
     }
 }
