@@ -48,8 +48,8 @@ export function AdminRoom() {
                     {questions.length > 0 && <span>{questions.length} perguntas</span>}
                 </div>
                 <div className="question-list">
-                    {questions.length > 0 && (
-                        <h1>teste</h1>
+                    {questions.length === 0 && (
+                        <h1>msg</h1>
                     )}
                     {questions.map(question => {
                         return (
