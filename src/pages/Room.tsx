@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { SyncLoader } from 'react-spinners';
 import logoImg from '../assets/images/logo.svg';
+import emptyImg from '../assets/images/empty-questions.svg';
 import { Button } from '../components/Button';
 import { Question } from '../components/Question';
 import { RoomCode } from '../components/RoomCode';
@@ -111,6 +112,19 @@ export function Room() {
                     </>
                     : 
                     <>
+                        {questions.length === 0 && (
+                            <div className="empty-questions">
+                                <img src={emptyImg} alt="nenhuma pergunta"/>
+                                <h1>Nenhuma pergunta por aqui...</h1>
+                                <span>
+                                    { user ? (
+                                        <>Seja a primeira pessoa a fazer uma pergunta!</>
+                                    ) : (
+                                        <>Faça o seu login e seja a primeira pessoa a fazer uma pergunta!</>
+                                    ) }
+                                </span>
+                            </div>
+                        )}
                         {questions.map(question => {
                             return (
                                 <Question
