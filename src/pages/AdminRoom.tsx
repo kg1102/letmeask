@@ -4,6 +4,7 @@ import logoImg from '../assets/images/logo.svg';
 import deleteImg from '../assets/images/delete.svg';
 import checkImg from '../assets/images/check.svg';
 import answerImg from '../assets/images/answer.svg'
+import emptyImg from '../assets/images/empty-questions.svg';
 
 import { Button } from '../components/Button';
 import { Question } from '../components/Question';
@@ -96,11 +97,12 @@ export function AdminRoom() {
                 <main className="content">
                     <div className="room-title">
                         <h1>Sala {title}</h1>
-                        {questions.length > 0 && <span>{questions.length} perguntas</span>}
+                        {loading ? <span>Carregando...</span> : <>{questions.length > 0 ? <span>{questions.length} perguntas</span> : <span>nenhuma pergunta</span>}</>}
                     </div>
                     <div className="question-list">
                         {questions.length === 0 && (
-                            <div>
+                            <div className="empty-questions">
+                                <img src={emptyImg} alt="nenhuma pergunta"/>
                                 <h1>Nenhuma pergunta por aqui...</h1>
                                 <span>Envie o código desta sala para seus amigos e comece a responder perguntas!</span>
                             </div>
